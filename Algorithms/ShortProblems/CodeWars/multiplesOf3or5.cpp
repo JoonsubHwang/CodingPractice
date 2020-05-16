@@ -5,7 +5,6 @@
 int solution(int number) 
 {
   int sum = 0;
-  
   int multiplier = 1, multiple;
   bool inRange;
   
@@ -34,5 +33,6 @@ int solution(int number)
   } 
   while (inRange);
   
+    
   return sum;
 }
