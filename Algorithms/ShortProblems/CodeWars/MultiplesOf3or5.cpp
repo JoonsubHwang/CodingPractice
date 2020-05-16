@@ -1,5 +1,8 @@
 /*
-    returns the sum of every multiples of 3 or 5 that are in the range of 1 to 'number'
+    https://www.codewars.com/kata/514b92a657cdc65150000006
+
+
+    Return the sum of every multiples of 3 or 5 that are in the range of 1 to 'number'
 */
 
 int solution(int number) 
