@@ -1,5 +1,6 @@
 /*
     vector, pair
+    https://www.codewars.com/kata/52c31f8e6605bcc646000082
     
     return two indexes of two elements which add up to 'target'
     (inputs are always valid, indexes will always be found)
