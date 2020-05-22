@@ -15,19 +15,19 @@
 
 std::string who_is_next(const std::vector<std::string>& names, long long cokeLeft) 
 {
-  std::vector<int> numCoke;
-  for (int i = 0; i < names.size(); ++i)
-    numCoke.push_back(1); // everyone starts with 1 coke per turn
+  long long numCoke = 1; // everyone starts with 1 coke per turn
   
   int person = 0;
   while (cokeLeft > 0)  
   {
-    cokeLeft -= numCoke[person]; // drink cokes
-    numCoke[person] *= 2; // double numCoke the person has to drink next time
+    cokeLeft -= numCoke; // drink cokes
     
     if (cokeLeft > 0) // drink cokes; if coke is left, go to next person (otherwise, return this person;)
       if (++person == names.size()) // 1st person drinks after the last one
-        person = 0;
+      {
+          person = 0;
+          numCoke *= 2; // double numCoke
+      }
   }
   
   return names[person];
@@ -41,10 +41,13 @@ std::string who_is_next(const std::vector<std::string>& names, long long cokeLef
     {
       int numPeople = names.size();
       long long step = 1;
-      while((r / step) > numPeople){
+      
+      while((r / step) > numPeople)
+      {
           r -= numPeople * step;
           step *= 2;
       }
+      
       return names[(r - 1) / step];
     }
 
