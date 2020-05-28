@@ -6,7 +6,7 @@
     @param exponent > 0
     
     abcd: each digit of num
-    if ( (a^exp + b^exp+1 + c^exp+2 + d^exp+3) / k == 0)
+    if ( (a^exp + b^exp+1 + c^exp+2 + d^exp+3) % k === 0)
       return k
     else
       return -1
